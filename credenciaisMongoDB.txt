@@ -1,2 +1,0 @@
-USER: apiCrud
-PASSWORD: Hc3eutqHfMB97joF
