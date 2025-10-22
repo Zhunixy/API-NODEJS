@@ -1,29 +1,48 @@
-//to importando o express que é um framework para nodejs para criar servidores web
-import express from 'express';
+import express from "express";
+import { PrismaClient } from "@prisma/client";
 
-//guardei as funções dele na const app
 const app = express();
-//defini a porta do meu servidor
-app.listen(3000);
+const prisma = new PrismaClient();
 
-//Aqui vou criar as minhas rotas
-//ROTA GET
-app.get('/main', (req, res) => {
-    res.send('GET recebido');
-})
+app.use(express.json());
 
-//ROTA POST
-app.post('/main', (req, res) => {
-    res.send('POST recebido');
-})
+app.listen(3000, () => console.log("Servidor rodando na porta 3000"));
 
-//ROTA PUT
-app.put('/main:id', (req, res) => {
-    res.send('PUT recebido');
-})
+// GET
+app.get("/main", async (req, res) => {
+  const users = await prisma.user.findMany();
+  res.status(200).json(users);
+});
 
-//ROTA DELETE
-app.delete('/main:id', (req, res) => {
-    res.send('DELETE recebido');
-})
+// POST
+app.post("/main", async (req, res) => {
+  const users = await prisma.user.create({
+    data: {
+      email: req.body.email,
+      name: req.body.name,
+      age: req.body.age,
+    },
+  });
+  res.status(200).json(users);
+});
 
+// PUT
+app.put("/main/:id", async (req, res) => {
+  const users = await prisma.user.update({
+    where: { id: req.params.id },
+    data: {
+      email: req.body.email,
+      name: req.body.name,
+      age: req.body.age,
+    },
+  });
+  res.status(200).json(users);
+});
+
+// DELETE
+app.delete("/main/:id", async (req, res) => {
+  await prisma.user.delete({
+    where: { id: req.params.id },
+  });
+  res.status(200).json({ message: "Usuário deletado" });
+});
