@@ -1,6 +1,7 @@
 # API-NODEJS
 
-Uma API simples construída com **Express** + **Prisma Client** para interação com um banco **MongoDB**, com rotas básicas (GET, POST, PUT, DELETE) para o modelo `User`.
+API RESTful desenvolvida para demonstrar a criação de endpoints CRUD completos utilizando Node.js, Express e Prisma ORM, conectada a um banco de dados MongoDB.
+O projeto implementa rotas básicas (GET, POST, PUT, DELETE), tratamento de erros e conexão segura via variável de ambiente.
 
 ---
 
@@ -11,6 +12,7 @@ Uma API simples construída com **Express** + **Prisma Client** para interação
 * Prisma Client — ORM/ODM para acesso ao banco
 * MongoDB — banco de dados NoSQL
 * ECMAScript Modules (`"type": "module"` no `package.json`)
+* Testes / Api Client - Thunder Client
 
 ---
 
@@ -87,7 +89,6 @@ model User {
 ---
 
 ## Sobre o Projeto
-
 * Este projeto foi desenvolvido com foco em aprendizado e prática de conceitos fundamentais de APIs REST, integração com bancos NoSQL e uso de ORM moderno (Prisma).
 Ele serve como base para aplicações back-end escaláveis e integrações com front-ends feitos em React ou Next.js.
 
