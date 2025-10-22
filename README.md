@@ -14,7 +14,7 @@ Uma API simples construída com **Express** + **Prisma Client** para interação
 
 ---
 
-## 📦 Instalação
+## Instalação
 
 1. Clone este repositório:
 
