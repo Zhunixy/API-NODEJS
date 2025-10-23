@@ -1,6 +1,6 @@
 # API-NODEJS
 
-API RESTful desenvolvida para demonstrar a criação de endpoints CRUD completos utilizando Node.js, Express e Prisma ORM, conectada a um banco de dados MongoDB.
+API REST desenvolvida para demonstrar a criação de endpoints CRUD completos utilizando Node.js, Express e Prisma ORM, conectada a um banco de dados MongoDB.
 O projeto implementa rotas básicas (GET, POST, PUT, DELETE), tratamento de erros e conexão segura via variável de ambiente.
 
 ---
