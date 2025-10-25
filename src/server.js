@@ -1,8 +1,7 @@
 import express from "express";
-import { PrismaClient } from "@prisma/client";
+import prisma from "./Model/orm.js";
 
 const app = express();
-const prisma = new PrismaClient();
 
 app.use(express.json());
 
@@ -19,6 +18,21 @@ app.get("/main", async (req, res) => {
       return res.status(500).json({ error: "Erro interno do servidor" });
     }
     res.status(400).json({ error: "Erro ao buscar usuários" });
+  }
+});
+
+//GET POR ESPECIFICAÇÃO
+app.get("/main/:id", async (req, res) => {
+  try {
+    const user = await prisma.user.findUnique({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    res.json(user);
+  } catch (error) {
+    res.json({ error: "Erro ao resgatar" });
   }
 });
 
