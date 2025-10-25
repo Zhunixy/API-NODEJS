@@ -92,4 +92,5 @@ model User {
 * Este projeto foi desenvolvido com foco em aprendizado e prática de conceitos fundamentais de APIs REST, integração com bancos NoSQL e uso de ORM moderno (Prisma).
 Ele serve como base para aplicações back-end escaláveis e integrações com front-ends feitos em React ou Next.js.
 
+Versão 1.1
 ---
